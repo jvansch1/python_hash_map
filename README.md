@@ -57,7 +57,7 @@ Elements can also be removed from the hash using the `delete` method:
   hash[10] will be None
 ```
 
-If you just need to check that a certain key exists in the Hash, the `exist` method can be used:
+If you just need to check that a certain key exists in the Hash, the `exists` method can be used:
 
 ```
   hash[10] = 100
