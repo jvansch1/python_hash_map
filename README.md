@@ -1,6 +1,6 @@
 # Hash Map
 
-This is an implementation of a Hash which will work with both ints and strings as keys
+This is an implementation of a Hash which will work with ints, floats, and strings as keys!
 
 ## Installation
 
