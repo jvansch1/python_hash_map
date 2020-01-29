@@ -1,7 +1,7 @@
 def hash_function(input, size):
 
-    if isinstance(input, int):
-        return input % size
+    if isinstance(input, int) or isinstance(input, float):
+        return int(input % size)
     if isinstance(input, str):
         i = 1
         sum = 0

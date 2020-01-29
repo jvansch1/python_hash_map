@@ -12,19 +12,26 @@ class TestHashMap:
         hash = HashMap()
         hash[1] = [100]
         hash["Hello"] = "Goodbye"
+        hash[1.7] = 45
         assert(hash[1]) == [100]
         assert(hash["Hello"]) == "Goodbye"
+        assert(hash[1.7]) == 45
 
     def test_delete(self):
         hash = HashMap()
         hash[1] = 100
         hash[2] = 200
+        hash[3.1] = 64
         assert(hash[1]) == 100
         assert(hash[2]) == 200
-        assert(hash.data_count) == 2
+        assert(hash[3.1]) == 64
+        assert(hash.data_count) == 3
         hash.delete(2)
+        hash.delete(3.1)
         assert(hash[2]) == None
+        assert(hash[3.1]) == None
         assert(hash.data_count) == 1
+
         # Deleting key not in hash should not decrement data count
         hash.delete(555)
         assert(hash.data_count) == 1

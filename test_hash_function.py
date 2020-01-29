@@ -6,3 +6,6 @@ def test_string_input():
 
 def test_int_input():
     assert(hash_function(188, 5)) < 5
+
+def test_float_input():
+    assert(hash_function(1.2, 5)) < 5 
