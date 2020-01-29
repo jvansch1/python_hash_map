@@ -12,7 +12,6 @@ Import the HashMap by typing `from hash_map import HashMap`. If you see `True` t
 
 ```
 from hash_map import HashMap
-True
 >>> hash = HashMap()
 >>> hash[1] = 100
 >>> print(hash[1])
