@@ -15,6 +15,15 @@ class TestHashMap:
         assert(hash[1]) == [100]
         assert(hash["Hello"]) == "Goodbye"
 
+    def test_delete(self):
+        hash = HashMap()
+        hash[1] = 100
+        hash[2] = 200
+        assert(hash[1]) == 100
+        assert(hash[2]) == 200
+        hash.delete(2)
+        assert(hash[2]) == None
+
     def test_keys(self):
         hash = HashMap()
         hash[1] = [100]
