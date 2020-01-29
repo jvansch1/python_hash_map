@@ -37,18 +37,21 @@ class LinkedList(object):
             # The key we are deleting is the head
             if current_node.key == key and prev_node == None:
                 self.head = current_node.next
-                return
+                return True
             # Node we are deleting is tail
             elif current_node.key == key and current_node.next == None:
-                # print("Deleting Tail Node")
-                # print(prev_node.value)
                 prev_node.next = None
                 self.tail = prev_node
+                return True
             elif current_node.key == key:
                 prev_node.next = current_node.next
+                return True
 
             prev_node = current_node
             current_node = current_node.next
+
+        # If we do not find the key return false
+        return False
 
 
     def keys(self):

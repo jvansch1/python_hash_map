@@ -21,8 +21,13 @@ class TestHashMap:
         hash[2] = 200
         assert(hash[1]) == 100
         assert(hash[2]) == 200
+        assert(hash.data_count) == 2
         hash.delete(2)
         assert(hash[2]) == None
+        assert(hash.data_count) == 1
+        # Deleting key not in hash should not decrement data count
+        hash.delete(555)
+        assert(hash.data_count) == 1
 
     def test_keys(self):
         hash = HashMap()

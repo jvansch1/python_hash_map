@@ -28,7 +28,9 @@ class HashMap(object):
     def delete(self, key):
         index = hash_function(key, self.size)
         list = self.store[index]
-        list.delete(key)
+        deleted = list.delete(key)
+        if deleted:
+            self.data_count -= 1
 
     def keys(self):
         keys = []
@@ -65,6 +67,14 @@ class HashMap(object):
     def increase_store_size(self):
         new_store = []
 
+        # The basic methodolgy here is:
+        #   1. Double the size of store with each being a unique copy of linked list
+        #   2. Get all existing key value pairs
+        #   3. Since the store is a different size, buckets may be placed
+        #      in different positions than they were previously. Re-bucket all
+        #      key value pairs
+        #   4. set the store of our instance to the new store
+
         for i in range(self.size * 2):
             new_store.append(LinkedList())
 
@@ -72,20 +82,9 @@ class HashMap(object):
             pairs = list.key_value_pairs()
 
             for pair in pairs:
-                # print(f"Key when Doubling: {pair[0]}")
-                # print(f"New Index: {hash_function(pair[0], self.size * 2)}")
+
                 new_index = hash_function(pair[0], self.size * 2)
                 new_store[new_index].insert(pair[0], pair[1])
 
         self.size = self.size * 2
         self.store = new_store
-
-map = HashMap()
-map[1] = 100
-map[5] = 500
-map[20] = 5
-map["Hello"] = "Blarfy"
-
-map["Hello"]
-
-print(map.exists("Hello"))
