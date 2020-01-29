@@ -6,9 +6,9 @@ This is an implementation of a Hash which will work with ints, floats, and strin
 
 As long as you have python3 there is nothing you need to install in order to get this working!
 
-In order to use HashMap, open your terminal using `python3`.
+In order to use HashMap, open your terminal using `python3` while in the root directory of this project.
 
-Import the HashMap by typing `from hash_map import HashMap`. If you see `True` then you are good to go!
+Import the HashMap by typing `from hash_map import HashMap`. You should be good to go!
 
 ```
 from hash_map import HashMap
