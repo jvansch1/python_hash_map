@@ -53,11 +53,13 @@ class TestHashMap:
         hash[1] = [100]
         hash[2] = [200]
         hash[3] = [300]
+        assert(hash.size) == 5
         assert(hash[1]) == [100]
         assert(hash[2]) == [200]
         assert(hash[3]) == [300]
         # Doubling happens here
         hash[4] = [400]
+        assert(hash.size) == 10
         hash[5] = [500]
         hash[6] = [600]
         hash[7] = [700]
@@ -79,3 +81,5 @@ class TestHashMap:
         map["Hello"] = "Goodbye"
         assert(map.exists("Hello"))
         assert(map["Hello"]) == "Goodbye"
+        map.delete("Hello")
+        assert(map["Hello"]) == None

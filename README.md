@@ -4,7 +4,28 @@ This is an implementation of a Hash which will work with both ints and strings a
 
 ## Installation
 
-The only dependecy required for this project is pytest. If you would like to run the test suite, please install pip. Once pip is installed, run `pip3 install -U pytest`.
+As long as you have python3 there is nothing you need to install in order to get this working!
+
+In order to use HashMap, open your terminal using `python3`.
+
+Import the HashMap by typing `from hash_map import HashMap`. If you see `True` then you are good to go!
+
+```
+from hash_map import HashMap
+True
+>>> hash = HashMap()
+>>> hash[1] = 100
+>>> print(hash[1])
+100
+>>> hash.delete(1)
+>>> print(hash[1])
+None
+>>>
+```
+
+## Testing
+
+This project is tested using the pytest framework. If you would like to run the test suite, please install pip. Once pip is installed, run `pip3 install -U pytest` in order to install pytest.
 
 After successful installation, run `pytest` to run the entire test suite.
 
